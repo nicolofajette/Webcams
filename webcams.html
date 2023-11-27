@@ -9,6 +9,118 @@
 	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	  <script type="text/javascript" src="https://static.panomax.com/front/thumbnail/js/pmaxthumbnail.js"></script>
+	  <script type="text/javascript">
+			let timeText;
+			
+			function setParentHeight(iframePreview, height) {
+				$("#" + iframePreview).parent().height(height);
+			}
+			
+			function panoramaxIframe(iframePreview, instanceId, width) {
+				var parent = $('#' + iframePreview).parent();
+				$('#' + iframePreview).remove();
+				$('<iframe>', { id:  iframePreview, class : "carouselIframe" }).appendTo(parent);		
+				setParentHeight(iframePreview, width/2);
+			    
+				var codeToEmbed = "<script type=\"text/javascript\" src=\"https://static.panomax.com/front/thumbnail/js/pmaxthumbnail.js\"><" + "/script>\n";
+				codeToEmbed += "<script type=\"text/javascript\">\n";
+				codeToEmbed += "PmaxThumbnail.place({\"instance\":" + instanceId + ",\"width\":\"100%\",\"height\":" + width/2 + ",\"map\":false,\"instanceName\":false,\"timelapse\":false,\"weather\":false});\n";
+				codeToEmbed += "<" + "/script>";
+
+				var iframeDocument = document.getElementById(iframePreview).contentWindow.document;			
+				iframeDocument.open();
+				iframeDocument.write('<style type="text/css">body { margin: 0; }</style>' + codeToEmbed);
+				iframeDocument.close();			
+			}	
+			
+			function loadContainer(container) {
+				var width = $(container).width();
+				if(container == '#cerviniaContainer') {
+					panoramaxIframe("iframePreviewCervinia1", 1203, width);
+					panoramaxIframe("iframePreviewCervinia2", 1289, width);
+					panoramaxIframe("iframePreviewCervinia3", 1774, width);
+				}
+				if(container == '#mondoleContainer') {
+					panoramaxIframe("iframePreviewMondole1", 2640998, width);
+				}
+				else if(container == '#pilaContainer') {
+					setParentHeight("iframePreviewPila1", width/1.64);
+				}
+				else if(container == '#vialatteaContainer') {
+					panoramaxIframe("iframePreviewVialattea1", 1990340, width);
+					panoramaxIframe("iframePreviewVialattea2", 1863540, width);
+					panoramaxIframe("iframePreviewVialattea3", 1864650, width);
+					panoramaxIframe("iframePreviewVialattea4", 1987154, width);
+					panoramaxIframe("iframePreviewVialattea5", 1868105, width);					
+				}			
+			}
+			
+			function startTime() {
+			  const today = new Date();
+			  timeText = today.getDate() + "/" + checkTime(today.getMonth() + 1) + "/" + today.getFullYear() + " ";
+			  timeText += today.getHours() + ":" + checkTime(today.getMinutes()) + ":" + checkTime(today.getSeconds());
+			  setTimeout(startTime, 1000);
+			}
+
+			function checkTime(i) {
+			  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+			  return i;
+			}
+			
+			function showClock(width) {
+				if(width >= 576) {
+					$("#clockLeft").hide();
+					$("#clockRight").show();
+					$("#clockRight").html(timeText);
+				}
+				else {
+					$("#clockRight").hide();
+					$("#clockLeft").show();
+					$("#clockLeft").html(timeText);
+				}
+			}
+			
+			$(document).ready(function() {
+				startTime();
+				showClock($(window).width());
+				
+				$('.NO-CACHE').attr('src',function () { return $(this).attr('src') + "?a=" + Math.random() });
+				
+				var menu = $(".nav-item a.active").attr("href");
+				$(".container").hide();
+				$(menu).show();
+				
+				loadContainer(menu);
+
+				$('.nav-item a').click(function(){
+					$(".nav-item a").removeClass("active");
+					$(this).addClass("active");
+					var menu = $(this).attr("href");
+					$(".container").hide();
+					//Stop all videos
+					$('video').each(function() {
+						$(this).get(0).pause();
+						$(this).get(0).currentTime = 0;
+					});		
+					
+					$(menu).show();
+					$(menu).find("video").each(function() {
+						$(this).get(0).play();
+					});
+					
+					loadContainer(menu);
+				});	
+				
+				$(window).on("resize", function() {
+					var menu = $(".nav-item a.active").attr("href");
+					loadContainer(menu);	
+					
+					showClock($(window).width());
+				});
+			});		
+		</script>
+	
+	  <!-- Styles -->
 	  <style>
 		.carousel-inner {
 			border-width: 1px 1px 0px 1px;
@@ -319,116 +431,5 @@
 				</button>
 			</div>
 		</div>
-		
-		<script type="text/javascript">
-			let timeText;
-			
-			function setParentHeight(iframePreview, height) {
-				$("#" + iframePreview).parent().height(height);
-			}
-			
-			function panoramaxIframe(iframePreview, instanceId, width) {
-				var parent = $('#' + iframePreview).parent();
-				$('#' + iframePreview).remove();
-				$('<iframe>', { id:  iframePreview, class : "carouselIframe" }).appendTo(parent);		
-				setParentHeight(iframePreview, width/2);
-			    
-				var codeToEmbed = "<script type=\"text/javascript\" src=\"https://static.panomax.com/front/thumbnail/js/pmaxthumbnail.js\"><" + "/script>\n";
-				codeToEmbed += "<script type=\"text/javascript\">\n";
-				codeToEmbed += "PmaxThumbnail.place({\"instance\":" + instanceId + ",\"width\":\"100%\",\"height\":" + width/2 + ",\"map\":false,\"instanceName\":false,\"timelapse\":false,\"weather\":false});\n";
-				codeToEmbed += "<" + "/script>";
-
-				var iframeDocument = document.getElementById(iframePreview).contentWindow.document;			
-				iframeDocument.open();
-				iframeDocument.write('<style type="text/css">body { margin: 0; }</style>' + codeToEmbed);
-				iframeDocument.close();			
-			}	
-			
-			function loadContainer(container) {
-				var width = $(container).width();
-				if(container == '#cerviniaContainer') {
-					panoramaxIframe("iframePreviewCervinia1", 1203, width);
-					panoramaxIframe("iframePreviewCervinia2", 1289, width);
-					panoramaxIframe("iframePreviewCervinia3", 1774, width);
-				}
-				if(container == '#mondoleContainer') {
-					panoramaxIframe("iframePreviewMondole1", 2640998, width);
-				}
-				else if(container == '#pilaContainer') {
-					setParentHeight("iframePreviewPila1", width/1.64);
-				}
-				else if(container == '#vialatteaContainer') {
-					panoramaxIframe("iframePreviewVialattea1", 1990340, width);
-					panoramaxIframe("iframePreviewVialattea2", 1863540, width);
-					panoramaxIframe("iframePreviewVialattea3", 1864650, width);
-					panoramaxIframe("iframePreviewVialattea4", 1987154, width);
-					panoramaxIframe("iframePreviewVialattea5", 1868105, width);					
-				}			
-			}
-			
-			function startTime() {
-			  const today = new Date();
-			  timeText = today.getDate() + "/" + checkTime(today.getMonth() + 1) + "/" + today.getFullYear() + " ";
-			  timeText += today.getHours() + ":" + checkTime(today.getMinutes()) + ":" + checkTime(today.getSeconds());
-			  setTimeout(startTime, 1000);
-			}
-
-			function checkTime(i) {
-			  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-			  return i;
-			}
-			
-			function showClock(width) {
-				if(width >= 576) {
-					$("#clockLeft").hide();
-					$("#clockRight").show();
-					$("#clockRight").html(timeText);
-				}
-				else {
-					$("#clockRight").hide();
-					$("#clockLeft").show();
-					$("#clockLeft").html(timeText);
-				}
-			}
-			
-			$(document).ready(function() {
-				startTime();
-				showClock($(window).width());
-				
-				$('.NO-CACHE').attr('src',function () { return $(this).attr('src') + "?a=" + Math.random() });
-				
-				var menu = $(".nav-item a.active").attr("href");
-				$(".container").hide();
-				$(menu).show();
-				
-				loadContainer(menu);				
-			});
-			
-			$(window).on("resize", function() {
-				var menu = $(".nav-item a.active").attr("href");
-				loadContainer(menu);	
-				
-				showClock($(window).width());
-			});
-			
-			$('.nav-item a').click(function(){
-				$(".nav-item a").removeClass("active");
-				$(this).addClass("active");
-				var menu = $(this).attr("href");
-				$(".container").hide();
-				//Stop all videos
-				$('video').each(function() {
-					$(this).get(0).pause();
-					$(this).get(0).currentTime = 0;
-				});		
-				
-				$(menu).show();
-				$(menu).find("video").each(function() {
-					$(this).get(0).play();
-				});
-				
-				loadContainer(menu);
-			});	
-		</script>
 	</body>
 </html>
