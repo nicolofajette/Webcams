@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <title>Webcams</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
+	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	  <script type="text/javascript" src="https://static.panomax.com/front/thumbnail/js/pmaxthumbnail.js"></script>
+	  <style>
+		.carousel-inner {
+			border-width: 1px 1px 0px 1px;
+			border-style: solid;
+		}
+	  
+		.carousel-item {
+			height: auto;
+		}
+		
+		.carousel-indicators {
+			background-color: black;
+			opacity: 0.75;
+			width: 100%;
+			margin-left: 0;
+			margin-bottom: 0;
+			bottom: -23px;
+		}
+		
+		.carousel-caption {
+			background-color: black;
+			opacity: 0.75;
+			bottom: 0;
+			left: 0;
+			right: auto;
+			margin-bottom: 0;
+			padding: 0px 5px;
+		}
+		
+		.carousel-caption h3 {
+			margin-bottom: 0;
+		}
+		
+		.carouselIframe {
+			width: 100%;
+			height: 100%;
+		}
+		
+		.carouselImg { 
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: 50% 50%;
+		}
+		
+		.clock {
+			color: white;
+			margin-left: auto;
+			margin-right: 5px;
+		}
+	  </style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="javascript:void(0)"><i class="bi bi-camera2"></i></a>
+				<div class="clock" id="clockLeft"></div>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mynavbar">
+					<ul class="navbar-nav me-auto">
+						<li  class="nav-item active">
+							<a class="nav-link active" href="#cerviniaContainer" data-bs-toggle="collapse" data-bs-target="#mynavbar">Cervinia</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#vialatteaContainer" data-bs-toggle="collapse" data-bs-target="#mynavbar">Vialattea</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#pilaContainer" data-bs-toggle="collapse" data-bs-target="#mynavbar">Pila</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#mondoleContainer" data-bs-toggle="collapse" data-bs-target="#mynavbar">Mondolè</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#sanGiacomoContainer" data-bs-toggle="collapse" data-bs-target="#mynavbar">San Giacomo</a>
+						</li>
+					</ul>
+				</div>
+				<div class="clock" id="clockRight"></div>
+			</div>
+		</nav>
+		<!-- Cervinia -->
+		<div id="cerviniaContainer" class="container mt-2">
+			<h2>Cervinia</h2>
+			<div id="cerviniaCarousel" class="carousel slide">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#cerviniaCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#cerviniaCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#cerviniaCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+					<button type="button" data-bs-target="#cerviniaCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+					<button type="button" data-bs-target="#cerviniaCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+					<button type="button" data-bs-target="#cerviniaCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img class="NO-CACHE carouselImg" src="https://cervinia-api.therocks.it/api/webcam/CEWC_AREA_PLANMAISON.jpg" alt="Plan Maison">
+						<div class="carousel-caption">
+							<h3>Plan Maison</h3>
+						</div>
+					</div>	
+					<div class="carousel-item carousel-item-iframe">
+						<iframe id="iframePreviewCervinia1" class="carouselIframe"></iframe>
+						<div class="carousel-caption">
+							<h3>Plan Maison</h3>
+						</div>
+					</div>	
+					<div class="carousel-item">
+						<iframe id="iframePreviewCervinia2" class="carouselIframe"></iframe>
+						<div class="carousel-caption">
+							<h3>Plateau Rosa</h3>
+						</div>
+					</div>	
+					<div class="carousel-item">
+						<img class="NO-CACHE carouselImg" src="https://cervinia-api.therocks.it/api/webcam/CEWC_AREA_CRETAZ.jpg" alt="Cretaz">
+						<div class="carousel-caption">
+							<h3>Cretaz</h3>
+						</div>  
+					</div>
+					<div class="carousel-item">
+						<img class="NO-CACHE carouselImg" src="https://cervinia-api.therocks.it/api/webcam/CBWC_AREA_DUCOL_M.jpg" alt="Du Col Monte">
+						<div class="carousel-caption">
+							<h3>Du Col Monte</h3>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<iframe id="iframePreviewCervinia3" class="carouselIframe"></iframe>
+						<div class="carousel-caption">
+							<h3>Chamois</h3>
+						</div>
+					</div>		
+				</div>
+				
+				<button class="carousel-control-prev" type="button" data-bs-target="#cerviniaCarousel" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#cerviniaCarousel" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+		<!-- Vialattea -->
+		<div id="vialatteaContainer" class="container mt-2">
+			<h2>Vialattea</h2>
+			<div id="vialatteaCarousel" class="carousel slide">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#vialatteaCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#vialatteaCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#vialatteaCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+					<button type="button" data-bs-target="#vialatteaCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+					<button type="button" data-bs-target="#vialatteaCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<iframe id="iframePreviewVialattea1" class="carouselIframe"></iframe>
+						<div class="carousel-caption">
+							<h3>Sestriere</h3>
+						</div>
+					</div>	
+					<div class="carousel-item carousel-item-iframe">
+						<iframe id="iframePreviewVialattea2" class="carouselIframe"></iframe>
+						<div class="carousel-caption">
+							<h3>Banchetta</h3>
+						</div>
+					</div>	
+					<div class="carousel-item carousel-item-iframe">
+						<iframe id="iframePreviewVialattea3" class="carouselIframe"></iframe>
+						<div class="carousel-caption">
+							<h3>Monte Fraiteve</h3>
+						</div>
+					</div>		
+					<div class="carousel-item carousel-item-iframe">
+						<iframe id="iframePreviewVialattea4" class="carouselIframe"></iframe>
+						<div class="carousel-caption">
+							<h3>Sauze D'Oulx</h3>
+						</div>
+					</div>	
+					<div class="carousel-item carousel-item-iframe">
+						<iframe id="iframePreviewVialattea5" class="carouselIframe"></iframe>
+						<div class="carousel-caption">
+							<h3>San Sicario</h3>
+						</div>
+					</div>	
+				</div>
+				
+				<button class="carousel-control-prev" type="button" data-bs-target="#vialatteaCarousel" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#vialatteaCarousel" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+		
+		<!-- Pila -->
+		<div id="pilaContainer" class="container mt-2">
+			<h2>Pila</h2>  
+			<div id="pilaCarouse" class="carousel slide">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#pilaCarouse" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<iframe id="iframePreviewPila1" class="carouselIframe" src="https://webtv.feratel.com/webtv/?design=v3&amp;cam=6312"></iframe>
+						<div class="carousel-caption">
+							<h3>Pila</h3>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+		<!-- Mondolè -->
+		<div id="mondoleContainer" class="container mt-2">
+			<h2>Mondolè</h2>
+			<div id="mondoleCarousel" class="carousel slide">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#mondoleCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#mondoleCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#mondoleCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+					<button type="button" data-bs-target="#mondoleCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+					<button type="button" data-bs-target="#mondoleCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<iframe id="iframePreviewMondole1" class="carouselIframe"></iframe>
+						<div class="carousel-caption">
+							<h3>Rosso</h3>
+						</div>
+					</div>	
+					<div class="carousel-item">
+						<img class="NO-CACHE carouselImg" src="https://www.vigliettisport.com/webcam.jpg" alt="Conca">
+						<div class="carousel-caption">
+							<h3>Conca</h3>
+						</div>
+					</div>	
+					<div class="carousel-item">
+						<img class="NO-CACHE carouselImg" src="https://cdn.skylinewebcams.com/88.jpg" alt="Artesina">
+						<div class="carousel-caption">
+							<h3>Artesina</h3>
+						</div>
+					</div>	
+					<div class="carousel-item">
+						<img class="NO-CACHE carouselImg" src="https://cdn.skylinewebcams.com/153.jpg" alt="Turra">
+						<div class="carousel-caption">
+							<h3>Turra</h3>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img class="NO-CACHE carouselImg" src="https://www.frabosaski.it/webcam/malanotte.jpg" alt="Frabosa">
+						<div class="carousel-caption">
+							<h3>Frabosa</h3>
+						</div>
+					</div>				
+					
+				</div>
+				
+				<button class="carousel-control-prev" type="button" data-bs-target="#mondoleCarousel" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#mondoleCarousel" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+		<!-- San Giacomo -->
+		<div id="sanGiacomoContainer" class="container mt-2">
+			<h2>San Giacomo</h2>
+			<div id="sanGiacomoCarousel" class="carousel slide">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#sanGiacomoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#sanGiacomoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#sanGiacomoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img class="NO-CACHE carouselImg" src="https://cdn.skylinewebcams.com/3766.jpg" alt="Alpet">
+						<div class="carousel-caption">
+							<h3>Alpet</h3>
+						</div>
+					</div>	
+					<div class="carousel-item">
+						<img class="NO-CACHE carouselImg" src="https://cdn.whatsupcams.com/snapshot/it_roburent01.jpg" alt="Alpet Panorama">
+						<div class="carousel-caption">
+							<h3>Alpet Panorama</h3>
+						</div>
+					</div>	
+					<div class="carousel-item">
+						<img class="NO-CACHE carouselImg" src="https://cdn.whatsupcams.com/snapshot/it_roburent02.jpg" alt="Bric Colmè">
+						<div class="carousel-caption">
+							<h3>Bric Colmè</h3>
+						</div>
+					</div>						
+				</div>
+				
+				<button class="carousel-control-prev" type="button" data-bs-target="#sanGiacomoCarousel" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#sanGiacomoCarousel" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+		
+		<script>
+			let timeText;
+			
+			function setParentHeight(iframePreview, height) {
+				$("#" + iframePreview).parent().height(height);
+			}
+			
+			function panoramaxIframe(iframePreview, instanceId, width) {
+				var parent = $('#' + iframePreview).parent();
+				$('#' + iframePreview).remove();
+				$('<iframe>', { id:  iframePreview, class : "carouselIframe" }).appendTo(parent);		
+				setParentHeight(iframePreview, width/2);
+			    
+				var codeToEmbed = "<script type=\"text/javascript\" src=\"https://static.panomax.com/front/thumbnail/js/pmaxthumbnail.js\"><" + "/script>\n";
+				codeToEmbed += "<script type=\"text/javascript\">\n";
+				codeToEmbed += "PmaxThumbnail.place({\"instance\":" + instanceId + ",\"width\":\"100%\",\"height\":" + width/2 + ",\"map\":false,\"instanceName\":false,\"timelapse\":false,\"weather\":false});\n";
+				codeToEmbed += "<" + "/script>";
+
+				var iframeDocument = document.getElementById(iframePreview).contentWindow.document;			
+				iframeDocument.open();
+				iframeDocument.write('<style type="text/css">body { margin: 0; }</style>' + codeToEmbed);
+				iframeDocument.close();			
+			}	
+			
+			function loadContainer(container) {
+				var width = $(container).width();
+				if(container == '#cerviniaContainer') {
+					panoramaxIframe("iframePreviewCervinia1", 1203, width);
+					panoramaxIframe("iframePreviewCervinia2", 1289, width);
+					panoramaxIframe("iframePreviewCervinia3", 1774, width);
+				}
+				if(container == '#mondoleContainer') {
+					panoramaxIframe("iframePreviewMondole1", 2640998, width);
+				}
+				else if(container == '#pilaContainer') {
+					setParentHeight("iframePreviewPila1", width/1.64);
+				}
+				else if(container == '#vialatteaContainer') {
+					panoramaxIframe("iframePreviewVialattea1", 1990340, width);
+					panoramaxIframe("iframePreviewVialattea2", 1863540, width);
+					panoramaxIframe("iframePreviewVialattea3", 1864650, width);
+					panoramaxIframe("iframePreviewVialattea4", 1987154, width);
+					panoramaxIframe("iframePreviewVialattea5", 1868105, width);					
+				}			
+			}
+			
+			function startTime() {
+			  const today = new Date();
+			  timeText = today.getDate() + "/" + checkTime(today.getMonth() + 1) + "/" + today.getFullYear() + " ";
+			  timeText += today.getHours() + ":" + checkTime(today.getMinutes()) + ":" + checkTime(today.getSeconds());
+			  setTimeout(startTime, 1000);
+			}
+
+			function checkTime(i) {
+			  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+			  return i;
+			}
+			
+			function showClock(width) {
+				if(width >= 576) {
+					$("#clockLeft").hide();
+					$("#clockRight").show();
+					$("#clockRight").html(timeText);
+				}
+				else {
+					$("#clockRight").hide();
+					$("#clockLeft").show();
+					$("#clockLeft").html(timeText);
+				}
+			}
+			
+			$(document).ready(function() {
+				startTime();
+				showClock($(window).width());
+				
+				$('.NO-CACHE').attr('src',function () { return $(this).attr('src') + "?a=" + Math.random() });
+				
+				var menu = $(".nav-item a.active").attr("href");
+				$(".container").hide();
+				$(menu).show();
+				
+				loadContainer(menu);				
+			});
+			
+			$(window).on("resize", function() {
+				var menu = $(".nav-item a.active").attr("href");
+				loadContainer(menu);	
+				
+				showClock($(window).width());
+			});
+			
+			$('.nav-item a').click(function(){
+				$(".nav-item a").removeClass("active");
+				$(this).addClass("active");
+				var menu = $(this).attr("href");
+				$(".container").hide();
+				//Stop all videos
+				$('video').each(function() {
+					$(this).get(0).pause();
+					$(this).get(0).currentTime = 0;
+				});		
+				
+				$(menu).show();
+				$(menu).find("video").each(function() {
+					$(this).get(0).play();
+				});
+				
+				loadContainer(menu);
+			});	
+		</script>
+	</body>
+</html>
