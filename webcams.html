@@ -129,6 +129,7 @@
 	  
 		.carousel-item {
 			height: auto;
+			max-height: calc(100vh - 150px);
 		}
 		
 		.carousel-indicators {
@@ -197,6 +198,9 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#sanGiacomoContainer" data-bs-toggle="collapse" data-bs-target="#mynavbar">San Giacomo</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#santoStefanoContainer" data-bs-toggle="collapse" data-bs-target="#mynavbar">Santo Stefano D'Aveto</a>
 						</li>
 					</ul>
 				</div>
@@ -431,5 +435,39 @@
 				</button>
 			</div>
 		</div>
+		<!-- Santo Stefano D'Aveto-->
+		<div id="santoStefanoContainer" class="container mt-2">
+			<h2>Santo Stefano D'Aveto</h2>
+			<div id="santoStefanoCarousel" class="carousel slide">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#santoStefanoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#santoStefanoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img class="NO-CACHE carouselImg" src="https://retelimet.centrometeoligure.it/stazioni/meteo-cipolla/webcam/current.jpg" alt="Prato Cipolla">
+						<div class="carousel-caption">
+							<h3>Prato Cipolla</h3>
+						</div>
+					</div>	
+					<div class="carousel-item">
+						<img class="NO-CACHE carouselImg" src="http://www.webcam.pc.it/webcam/montebue.jpg" alt="Monte Bue">
+						<div class="carousel-caption">
+							<h3>Monte Bue</h3>
+						</div>
+					</div>						
+				</div>
+				
+				<button class="carousel-control-prev" type="button" data-bs-target="#santoStefanoCarousel" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#santoStefanoCarousel" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+	
 	</body>
 </html>
