@@ -96,6 +96,7 @@
 			  timeText = today.getDate() + "/" + checkTime(today.getMonth() + 1) + "/" + today.getFullYear() + " ";
 			  timeText += today.getHours() + ":" + checkTime(today.getMinutes()) + ":" + checkTime(today.getSeconds());
 			  setTimeout(startTime, 1000);
+			  showClock($(window).width());
 			}
 
 			function checkTime(i) {
@@ -170,8 +171,7 @@
 			
 			$(document).ready(function() {
 				startTime();
-				showClock($(window).width());
-				
+
 				createElements();
 				
 				var location = $(".nav-item a.active").attr("href");
