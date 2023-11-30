@@ -209,10 +209,33 @@
 		.carousel-indicators {
 			background-color: black;
 			opacity: 0.75;
-			width: 100%;
-			margin-left: 0;
+			width: calc(100% + 30px);
+			margin-left: -15px;
+			margin-right: -15px;
 			margin-bottom: 0;
 			bottom: -23px;
+		}
+		
+		.carousel-control-prev,
+		.carousel-control-next {
+			width: 15px;
+			background-color: black;
+			opacity: 0.75;
+		}
+		
+		.carousel-control-next:focus, 
+		.carousel-control-next:hover, 
+		.carousel-control-prev:focus, 
+		.carousel-control-prev:hover {
+			opacity: 0.75;
+		}
+		
+		.carousel-control-prev {
+			left: -15px;
+		}
+		
+		.carousel-control-next {
+			right: -15px;
 		}
 		
 		.carousel-caption {
