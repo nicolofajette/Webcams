@@ -13,94 +13,145 @@
 			let timeText;
 			
 			const locationList = {
-				"cervinia" : { 
-					name: "Cervinia", webcams: [ 
-						{ name: "Plan Maison", type: "image", src: "https://cervinia-api.therocks.it/api/webcam/CEWC_AREA_PLANMAISON.jpg"},
-						{ name: "Plan Maison", type: "iframe", iframeType: "panoramax", iframeId: 1203},
-						{ name: "Plateau Rosa", type: "iframe", iframeType: "panoramax", iframeId: 1289},
-						{ name: "Cretaz", type: "image", src: "https://cervinia-api.therocks.it/api/webcam/CEWC_AREA_CRETAZ.jpg"}, 
-						{ name: "Du Col Monte", type: "image", src: "https://cervinia-api.therocks.it/api/webcam/CBWC_AREA_DUCOL_M.jpg"},
-						{ name: "Valtournanche Motta", type: "image", src: "https://cervinia-api.therocks.it/api/webcam/CBWC_AREA_MOTTA_M.jpg"},
-						{ name: "Chamois", type: "iframe", iframeType: "panoramax", iframeId: 1774},
-					]},
-				"pila" : {
-					name: "Pila", webcams: [ 
-						{ name: "Pila", type: "iframe", src: "https://webtv.feratel.com/webtv/?design=v3&cam=6316&lg=it"},
-					]},
-				"monterosa" : {
-					name: "Monterosa", webcams: [ 
-						{ name: "Crest", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6284&t=1&design=v4&c0=0&c2=1&c39=0&c40=0&lg=it&s=0&c1=0"},
-						{ name: "Colle Betta", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6283&t=1&design=v4&c0=0&c2=1&c39=0&c40=0&lg=it&s=0&c1=0"},
-						{ name: "Gabiet", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6285&t=1&design=v4&c0=0&c2=1&c39=0&c40=0&lg=it&s=0&c1=0"},
-						{ name: "Salati", type: "image", src: "https://webcam.visitmonterosa.com/webcam.php?wid=4&ext=.jpg&timestamp=1704787583"}					
-					]},
-				"lathuile" : {
-					name: "La Thuile", webcams: [ 
-						{ name: "Paese", type: "iframe", src:"https://ac123mp-cdn.streamcloud.it/embed/live/8c52090f-320d-4ab9-9bcf-3e2fc5472d06"},
-						{ name: "Chaz Dura", type: "iframe", iframeType: "panoramax", iframeId: 1270},
-						{ name: "Rosiere", type: "iframe", src:"https://m.webcam-hd.com/rosiere-planica/rosiere-planica_hotel"}
-					]},
-				"vialattea" : {
-					name: "Vialattea", webcams: [ 
-						{ name: "Sestriere", type: "iframe", iframeType: "panoramax", iframeId: 1990340},
-						{ name: "Banchetta", type: "iframe", iframeType: "panoramax", iframeId: 1863540},
-						{ name: "Monte Fraiteve", type: "iframe", iframeType: "panoramax", iframeId: 1864650},
-						{ name: "Sauze D'Oulx", type: "iframe", iframeType: "panoramax", iframeId: 1987154},
-						{ name: "San Sicario", type: "iframe", iframeType: "panoramax", iframeId: 1868105}
-					]},
-				"colere" : {
-					name: "Colere", webcams: [ 
-						{ name: "Cima Bianca", type: "image", src: "https://www.furaco.it/webcam/colere/cimabianca/cimabianca.jpg"},
-						{ name: "Polzone", type: "image", src: "https://www.furaco.it/webcam/colere/polzone/polzone.jpg"},
-						{ name: "Carbonera", type: "image", src: "http://www.maxpiantoni.it/images/stories/miawebcam/cam.jpg"}					
-					]},
+				"valleaosta": {
+					name: "Valle d'Aosta", locations: {
+						"cervinia" : { 
+							name: "Cervinia", webcams: [ 
+								{ name: "Plan Maison", type: "image", src: "https://cervinia-api.therocks.it/api/webcam/CEWC_AREA_PLANMAISON.jpg"},
+								{ name: "Plan Maison", type: "iframe", iframeType: "panoramax", iframeId: 1203},
+								{ name: "Plateau Rosa", type: "iframe", iframeType: "panoramax", iframeId: 1289},
+								{ name: "Zermatt", type: "iframe", src:"https://zbag.roundshot.com/matterhornglacierparadise/#/video"},
+								{ name: "Cretaz", type: "image", src: "https://cervinia-api.therocks.it/api/webcam/CEWC_AREA_CRETAZ.jpg"}, 
+								{ name: "Du Col Monte", type: "image", src: "https://cervinia-api.therocks.it/api/webcam/CBWC_AREA_DUCOL_M.jpg"},
+								{ name: "Goillet", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6350&design=v5&lg=it"},
+								{ name: "Valtournanche Motta", type: "image", src: "https://cervinia-api.therocks.it/api/webcam/CBWC_AREA_MOTTA_M.jpg"},
+								{ name: "Chamois", type: "iframe", iframeType: "panoramax", iframeId: 1774},
+							]},
+						"pila" : {
+							name: "Pila", webcams: [ 
+								{ name: "Pila", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6316&design=v5&lg=it"},
+							]},
+						"monterosa" : {
+							name: "Monterosa", webcams: [ 
+								{ name: "Crest", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6284&design=v5&lg=it"},
+								{ name: "Colle Betta", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6283&design=v5&lg=it"},
+								{ name: "Gabiet", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6285&design=v5&lg=it"},
+								{ name: "Salati", type: "image", src: "https://webcam.visitmonterosa.com/webcam.php?wid=4&ext=.jpg&timestamp=1704787583"}					
+							]},
+						"lathuile" : {
+							name: "La Thuile", webcams: [ 
+								{ name: "Paese", type: "iframe", src:"https://ac123mp-cdn.streamcloud.it/embed/live/8c52090f-320d-4ab9-9bcf-3e2fc5472d06"},
+								{ name: "Chaz Dura", type: "iframe", iframeType: "panoramax", iframeId: 1270},
+								{ name: "Rosiere", type: "iframe", src:"https://m.webcam-hd.com/rosiere-planica/rosiere-planica_hotel"}
+							]},
+						"courmayeur" : {
+							name: "Courmayeur", webcams: [ 
+								{ name: "Courmayeur 360", type: "iframe", iframeType: "panoramax", iframeId: 4053485},
+								{ name: "Punta Helbronner", type: "iframe", iframeType: "panoramax", iframeId: 1954},
+								{ name: "Courmayeur", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6358&design=v5&lg=it"},
+							]}
+				}},			
+				"piemonte": {
+					name: "Piemonte", locations: {	
+						"vialattea" : {
+							name: "Vialattea", webcams: [ 
+								{ name: "Sestriere", type: "iframe", iframeType: "panoramax", iframeId: 1990340},
+								{ name: "Banchetta", type: "iframe", iframeType: "panoramax", iframeId: 1863540},
+								{ name: "Monte Fraiteve", type: "iframe", iframeType: "panoramax", iframeId: 1864650},
+								{ name: "Sauze D'Oulx", type: "iframe", iframeType: "panoramax", iframeId: 1987154},
+								{ name: "San Sicario", type: "iframe", iframeType: "panoramax", iframeId: 1868105}
+							]},
+						"mondole" : {
+							name: "Mondolè", webcams: [ 
+								{ name: "Rosso", type: "iframe", iframeType: "panoramax", iframeId: 2640998},
+								{ name: "Conca", type: "image", src: "https://www.vigliettisport.com/webcam.jpg"},
+								{ name: "Artesina", type: "image", src: "https://cdn.skylinewebcams.com/88.jpg"},
+								{ name: "Turra", type: "image", src: "https://cdn.skylinewebcams.com/153.jpg"},
+								{ name: "Mirafiori", type: "image", src: "https://www.simolimo.com/webcam/artesina/mirafiori/image.jpg"},
+								{ name: "Frabosa", type: "image", src: "https://www.frabosaski.it/webcam/Malanotte.jpg"},
+								{ name: "Burrino", type: "image", src: "https://www.frabosaski.it/webcam/burrino.jpg"}
+							]},
+						"sanGiacomo" : {
+							name: "San Giacomo", webcams: [ 
+								{ name: "Alpet", type: "image", src: "https://cdn.skylinewebcams.com/3766.jpg"},
+								{ name: "Alpet Panorama", type: "image", src: "https://cdn.whatsupcams.com/snapshot/it_roburent01.jpg"}
+							]},
+						"limone" : {
+							name: "Limone", webcams: [ 
+								{ name: "Niculin", type: "image", src: "https://cdn.riservabianca.it/webcams/niculin_2.jpg"},
+								{ name: "Cabanaira", type: "image", src: "https://cdn.riservabianca.it/webcams/cabanaira_0.jpg"},
+								{ name: "Alpetta", type: "image", src: "https://cdn.riservabianca.it/webcams/cabinovia-monte-vs-alpetta_0.jpg"}
+							]},
+						"prali" : {
+							name: "Prali", webcams: [ 
+								{ name: "Malzat", type: "image", src: "https://www.praliskiarea.info/webcam/malzat.jpg"},
+								{ name: "Capannina", type: "image", src: "https://www.praliskiarea.info/webcam/capannina.jpg"},
+								{ name: "Bric Rond", type: "image", src: "https://www.praliskiarea.info/webcam/bricrond.jpg"}
+							]},
+						"vario" : {
+							name: "Vario", webcams: [
+								{ name: "Val Maira Acceglio", type: "image", src: "https://www.lemarmotte.com/webcam/webcam_online/webcam.jpg" },
+								{ name: "Entracque Paese", type: "image", src: "http://www.servizipubblicaamministrazione.it/cms/portals/104/SiscomArchivio/Webcam/entracque.jpg"}
+							]}
+				}},
+				"lombardia": {
+					name: "Lombardia", locations: {
+						"colere" : {
+							name: "Colere", webcams: [ 
+								{ name: "Cima Bianca", type: "image", src: "https://www.furaco.it/webcam/colere/cimabianca/cimabianca.jpg"},
+								{ name: "Polzone", type: "image", src: "https://www.furaco.it/webcam/colere/polzone/polzone.jpg"},
+								{ name: "Carbonera", type: "image", src: "http://www.maxpiantoni.it/images/stories/miawebcam/cam.jpg"}					
+						]},
+						"stelvio" : {
+							name: "Stelvio", webcams: [
+								{ name: "Livrio", type: "image", src: "https://jpeg.popso.it/webcam/webcam_online/stelviolive_10.jpg"},
+								{ name: "Trincerone", type: "image", src: "https://jpeg.popso.it/webcam/webcam_online/stelviolive_09.jpg"},
+								{ name: "Trincerone", type: "image", src: "https://jpeg.popso.it/webcam/webcam_online/stelviolive_08.jpg"},
+								{ name: "Passo Stelvio", type: "image", src: "https://jpeg.popso.it/webcam/webcam_online/stelviolive_03.jpg"},
+								{ name: "Passo Stelvio", type: "image", src:"https://jpeg.popso.it/webcam/webcam_online/stelviolive_07.jpg"}
+						]},
+						"bormio" : {
+							name: "Bormio", webcams: [ 
+								{ name: "Bormio", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6220&design=v5&lg=it"}				
+						]},
+				}},				
 				"trentino" : {
-					name: "Trentino", webcams: [ 
-						{ name: "San Pellegrino", type: "iframe", src: "https://4k.meteocam.it/cimauomo/"},	
-						{ name: "Col Margherita", type: "iframe", src: "https://4k.realcam.it/pano19/"},
-						{ name: "Val Gardena", type: "iframe", src: "https://webtv.feratel.com/webtv/?design=v3&cam=6340&lg=it"}						
-					]},
-				"mondole" : {
-					name: "Mondolè", webcams: [ 
-						{ name: "Rosso", type: "iframe", iframeType: "panoramax", iframeId: 2640998},
-						{ name: "Conca", type: "image", src: "https://www.vigliettisport.com/webcam.jpg"},
-						{ name: "Artesina", type: "image", src: "https://cdn.skylinewebcams.com/88.jpg"},
-						{ name: "Turra", type: "image", src: "https://cdn.skylinewebcams.com/153.jpg"},
-						{ name: "Mirafiori", type: "image", src: "https://www.simolimo.com/webcam/artesina/mirafiori/image.jpg"},
-						{ name: "Frabosa", type: "image", src: "https://www.frabosaski.it/webcam/Malanotte.jpg"},
-						{ name: "Burrino", type: "image", src: "https://www.frabosaski.it/webcam/burrino.jpg"}
-					]},
-				"sanGiacomo" : {
-					name: "San Giacomo", webcams: [ 
-						{ name: "Alpet", type: "image", src: "https://cdn.skylinewebcams.com/3766.jpg"},
-						{ name: "Alpet Panorama", type: "image", src: "https://cdn.whatsupcams.com/snapshot/it_roburent01.jpg"}
-					]},
-				"limone" : {
-					name: "Limone", webcams: [ 
-						{ name: "Niculin", type: "image", src: "https://cdn.riservabianca.it/webcams/niculin_2.jpg"},
-						{ name: "Cabanaira", type: "image", src: "https://cdn.riservabianca.it/webcams/cabanaira_0.jpg"},
-						{ name: "Alpetta", type: "image", src: "https://cdn.riservabianca.it/webcams/cabinovia-monte-vs-alpetta_0.jpg"}
-					]},
-				"santoStefano" : {
-					name: "Santo Stefano D'Aveto", webcams: [ 
-						{ name: "Prato Cipolla", type: "image", src: "https://retelimet.centrometeoligure.it/stazioni/meteo-cipolla/webcam/current.jpg"},
-						{ name: "Monte Bue", type: "image", src: "http://www.webcam.pc.it/webcam/montebue.jpg"}
-					]},
-				"genova" : {
-					name: "Genova", webcams: [ 
-						{ name: "Apparizione", type: "image", src: "http://apparizionemeteo.altervista.org/images/cameracam1/cam.jpg"},					
-						{ name: "Lanterna", type: "image", src: "https://smart.comune.genova.it/webcam2/tursi/current.jpg"},
-						{ name: "Nervi", type: "image", src: "https://smart.comune.genova.it/webcam2/nervi/current.jpg"},
-						{ name: "Sant'Ilario", type: "image", src: "https://smart.comune.genova.it/webcam2/s_ilario/current.jpg"},
-						{ name: "Torre Gropallo", type: "image", src: "https://smart.comune.genova.it/webcam2/gropallo/current.jpg"},
-						{ name: "Terrazza Colombo - Levante", type: "iframe", src: "https://g0.ipcamlive.com/player/player.php?alias=6286693e4e708&skin=white&autoplay=1"},
-						{ name: "Terrazza Colombo - Centro", type: "iframe", src: "https://g0.ipcamlive.com/player/player.php?alias=6166ebad0c2a0&skin=white&autoplay=1"},
-						{ name: "Terrazza Colombo - Ponente", type: "iframe", src: "https://g0.ipcamlive.com/player/player.php?alias=6166eb417160c&skin=white&autoplay=1"},
-						{ name: "Terrazza Colombo - Mare", type: "iframe", src: "https://g0.ipcamlive.com/player/player.php?alias=616694726ad6a&skin=white&autoplay=1"},
-						{ name: "Faiallo", type: "image", src: "https://retelimet.centrometeoligure.it/stazioni/meteo-faiallo/data/wds5/cartella_dati_meteo/webcam/cam.jpg"},
-						{ name: "Rifugio Antola", type: "image", src: "https://retelimet.centrometeoligure.it/stazioni/meteo-rifugio-parco-antola/data/webcam/antolacam.jpg"},
-						{ name: "Rifugio Argentea", type: "image", src: "https://vecchiosito.comune.arenzano.ge.it/uploads/images/webcam/rifugio/image.jpg"}
-					]}
+					name: "Trentino", locations: {
+						"sanpellegrino" : {
+							name: "San Pellegrino", webcams: [ 
+								{ name: "San Pellegrino", type: "iframe", src: "https://4k.meteocam.it/cimauomo/"},	
+								{ name: "Col Margherita", type: "iframe", src: "https://4k.realcam.it/pano19/"}
+						]},
+						"valgardena" : {
+							name: "Val Gardena", webcams: [
+								{ name: "Val Gardena", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6340&design=v5&lg=it"}
+						]}
+					}
+				},
+				"liguria" : {
+					name: "Liguria", locations: {		
+						"santoStefano" : {
+							name: "Santo Stefano D'Aveto", webcams: [ 
+								{ name: "Prato Cipolla", type: "image", src: "https://retelimet.centrometeoligure.it/stazioni/meteo-cipolla/webcam/current.jpg"},
+								{ name: "Monte Bue", type: "image", src: "http://www.webcam.pc.it/webcam/montebue.jpg"}
+							]},
+						"genova" : {
+							name: "Genova", webcams: [ 
+								{ name: "Apparizione", type: "image", src: "http://apparizionemeteo.altervista.org/images/cameracam1/cam.jpg"},					
+								{ name: "Lanterna", type: "image", src: "https://smart.comune.genova.it/webcam2/tursi/current.jpg"},
+								{ name: "Nervi", type: "image", src: "https://smart.comune.genova.it/webcam2/nervi/current.jpg"},
+								{ name: "Sant'Ilario", type: "image", src: "https://smart.comune.genova.it/webcam2/s_ilario/current.jpg"},
+								{ name: "Torre Gropallo", type: "image", src: "https://smart.comune.genova.it/webcam2/gropallo/current.jpg"},
+								{ name: "Terrazza Colombo - Levante", type: "iframe", src: "https://g0.ipcamlive.com/player/player.php?alias=6286693e4e708&skin=white&autoplay=1"},
+								{ name: "Terrazza Colombo - Centro", type: "iframe", src: "https://g0.ipcamlive.com/player/player.php?alias=6166ebad0c2a0&skin=white&autoplay=1"},
+								{ name: "Terrazza Colombo - Ponente", type: "iframe", src: "https://g0.ipcamlive.com/player/player.php?alias=6166eb417160c&skin=white&autoplay=1"},
+								{ name: "Terrazza Colombo - Mare", type: "iframe", src: "https://g0.ipcamlive.com/player/player.php?alias=616694726ad6a&skin=white&autoplay=1"},
+								{ name: "Faiallo", type: "image", src: "https://retelimet.centrometeoligure.it/stazioni/meteo-faiallo/data/wds5/cartella_dati_meteo/webcam/cam.jpg"},
+								{ name: "Rifugio Antola", type: "image", src: "https://retelimet.centrometeoligure.it/stazioni/meteo-rifugio-parco-antola/data/webcam/antolacam.jpg"},
+								{ name: "Rifugio Argentea", type: "image", src: "https://vecchiosito.comune.arenzano.ge.it/uploads/images/webcam/rifugio/image.jpg"}
+							]}
+					}
+				}
 			}
 			
 			function setParentHeight(iframePreview, height) {
@@ -118,129 +169,157 @@
 				codeToEmbed += "PmaxThumbnail.place({\"instance\":" + instanceId + ",\"width\":\"100%\",\"height\":" + width/2 + ",\"map\":false,\"instanceName\":false,\"timelapse\":false,\"weather\":false});\n";
 				codeToEmbed += "<" + "/script>";
 
-				var iframeDocument = document.getElementById(iframePreview).contentWindow.document;			
-				iframeDocument.open();
-				iframeDocument.write('<style type="text/css">body { margin: 0; }</style>' + codeToEmbed);
-				iframeDocument.close();			
+				const $iframeDocument = document.getElementById(iframePreview).contentWindow.document;			
+				$iframeDocument.open();
+				$iframeDocument.write('<style type="text/css">body { margin: 0; }</style>' + codeToEmbed);
+				$iframeDocument.close();			
 			}	
 			
-			function loadIframe(key) {
+			function loadIframe(mainKey, key) {
 				var width = $("#" + key).width();
 				
-				locationList[key].webcams.forEach((webcam, index) => {
+				const location = locationList[mainKey].locations[key];	
+				location.webcams.forEach((webcam, index) => {
 					if(webcam.type == "iframe") {
-						if(webcam.iframeType == "panoramax") {
-							panoramaxIframe("iframePreview_" + key + index, webcam.iframeId, width);
-						}
-						else {
-							setParentHeight("iframePreview_" + key + index, width/1.64)
+						const iframeId = "iframePreview_" + key + index;
+						if (webcam.iframeType === "panoramax") {
+							panoramaxIframe(iframeId, webcam.iframeId, width);
+						} else {
+							setParentHeight(iframeId, width / 1.64);
 						}
 					}
 				});	
 			}
 			
+			//*****************************************************************************************
+			//Clock functions
 			function startTime() {
-			  const today = new Date();
-			  timeText = today.getDate() + "/" + checkTime(today.getMonth() + 1) + "/" + today.getFullYear() + " ";
-			  timeText += today.getHours() + ":" + checkTime(today.getMinutes()) + ":" + checkTime(today.getSeconds());
+			  const now = new Date();
+			  timeText = now.getDate() + "/" + padTime(now.getMonth() + 1) + "/" + now.getFullYear() + " ";
+			  timeText += now.getHours() + ":" + padTime(now.getMinutes()) + ":" + padTime(now.getSeconds());
 			  setTimeout(startTime, 1000);
 			  showClock($(window).width());
 			}
 
-			function checkTime(i) {
+			function padTime(i) {
 			  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
 			  return i;
 			}
 			
 			function showClock(width) {
-				if(width >= 576) {
-					$("#clockLeft").hide();
-					$("#clockRight").show();
-					$("#clockRight").html(timeText);
-				}
-				else {
-					$("#clockRight").hide();
-					$("#clockLeft").show();
-					$("#clockLeft").html(timeText);
-				}
+				const isWide = width >= 576;
+				$("#clockLeft").toggle(!isWide).html(isWide ? "" : timeText);
+				$("#clockRight").toggle(isWide).html(isWide ? timeText : "");
 			}
+			//*****************************************************************************************
 			
-			function createContainerElements(key) {	
+			function createContainerElements(element) {	
 				$("#mainContainer").empty();
-			
-				var container = $('<div>', { id: key, class : "container mt-2" });
-				var carousel = $('<div>', { id: key + "Carousel", class : "carousel slide" });
-				$("#mainContainer").append(container.append($('<h2>', { text: locationList[key].name }), carousel));
+
+				const [mainKey, key] = element.split("_");
+				const location = locationList[mainKey].locations[key];	
+
+				const $container = $('<div>', { id: key, class : "container mt-2" });
+				const $carousel = $('<div>', { id: key + "Carousel", class : "carousel slide" });
+				$("#mainContainer").append($container.append($('<h2>', { text: location.name }), $carousel ));
 				
-				var carousel_indicators = $('<div>', { class : "carousel-indicators" });
-				var carousel_inner = $('<div>', { class : "carousel-inner" });
-				var btn_prev = $('<button>', { class : "carousel-control-prev", type: "button", "data-bs-target": "#" + key + "Carousel", "data-bs-slide": "prev" });
-				var btn_next = $('<button>', { class : "carousel-control-next", type: "button", "data-bs-target": "#" + key + "Carousel", "data-bs-slide": "next" });
-				btn_prev.append($('<span>', { class : "carousel-control-prev-icon", "aria-hidden": true }), $('<span>', { class : "visually-hidden", text: "Previous" }));
-				btn_next.append($('<span>', { class : "carousel-control-next-icon", "aria-hidden": true }), $('<span>', { class : "visually-hidden", text: "Next" }));
-				carousel.append(carousel_indicators, carousel_inner, btn_prev, btn_next); 
+				const $carousel_indicators = $('<div>', { class : "carousel-indicators" });
+				const $carousel_inner = $('<div>', { class : "carousel-inner" });
+				const $btn_prev = $('<button>', { class : "carousel-control-prev", type: "button", "data-bs-target": "#" + key + "Carousel", "data-bs-slide": "prev" });
+				const $btn_next = $('<button>', { class : "carousel-control-next", type: "button", "data-bs-target": "#" + key + "Carousel", "data-bs-slide": "next" });
+				$btn_prev.append($('<span>', { class : "carousel-control-prev-icon", "aria-hidden": true }), $('<span>', { class : "visually-hidden", text: "Previous" }));
+				$btn_next.append($('<span>', { class : "carousel-control-next-icon", "aria-hidden": true }), $('<span>', { class : "visually-hidden", text: "Next" }));
+				$carousel.append($carousel_indicators, $carousel_inner, $btn_prev, $btn_next); 
 				
-				for(var i = 0; i < locationList[key].webcams.length; i++) {
-					var entry = locationList[key].webcams[i];
-					carousel_indicators.append($('<button>', { type: "button", "data-bs-target": "#" + key + "Carousel", "ata-bs-targe": "#" + key + "Carousel", "data-bs-slide-to": i, "aria-label": "Slide " + (i+1) }));
+				for(var i = 0; i <location.webcams.length; i++) {
+					const entry = location.webcams[i];
+					$carousel_indicators.append($('<button>', { type: "button", "data-bs-target": "#" + key + "Carousel", "ata-bs-targe": "#" + key + "Carousel", "data-bs-slide-to": i, "aria-label": "Slide " + (i+1) }));
 					
-					var el = $('<div>', { class: "carousel-item" });
+					const $el = $('<div>', { class: "carousel-item" });
 					if(entry.type == "image") {
 						//Add Image
-						el.append($('<img>', { class: "NO-CACHE carouselImg", src: entry.src + "?a=" + Math.random(), alt: entry.name }));
+						$el.append($('<img>', { class: "NO-CACHE carouselImg", src: entry.src + "?a=" + Math.random(), alt: entry.name }));
 					}
 					else if(entry.type == "iframe") {
 						//Add Iframe
-						var iframe = $('<iframe>', { class : "carouselIframe", id: "iframePreview_" + key + i })
+						const $iframe = $('<iframe>', { class : "carouselIframe", id: "iframePreview_" + key + i })
 						if(entry.src) {
-							iframe.attr('src', entry.src);
+							$iframe.attr('src', entry.src);
 						}
-						el.append(iframe);
+						$el.append($iframe);
 					}
-					el.append($('<div>', { class: "carousel-caption" }).append($('<h3>', { text: entry.name })));
-					carousel_inner.append(el);
+					$el.append($('<div>', { class: "carousel-caption" }).append($('<h3>', { text: entry.name })));
+					$carousel_inner.append($el);
 				}
 				
-				carousel_inner.find(">:first-child").toggleClass("active");
-				carousel_indicators.find(">:first-child").toggleClass("active");
-				carousel_indicators.find(">:first-child").attr("aria-current", true);
+				$carousel_inner.find(">:first-child").toggleClass("active");
+				$carousel_indicators.find(">:first-child").toggleClass("active");
+				$carousel_indicators.find(">:first-child").attr("aria-current", true);
 				
-				loadIframe(key);
+				loadIframe(mainKey, key);
 			}
 			
-			function createElements() {
-				for(var key in locationList) {
-					var li = $('<li>', { class : "nav-item" });
-					var a = $('<a>', { class : "nav-link", href: "#" + key, "data-bs-toggle": "collapse", "data-bs-target" : "#mynavbar", text : locationList[key].name});
-					$("#navbar-list").append(li.append(a));
-				}
-				$("#navbar-list").find(">:first-child").find("a").toggleClass("active");
+			function createMenuElements() {
+				const $navbarList = $("#navbar-list").empty();
+				Object.entries(locationList).forEach(([mainKey, mainVal]) => {
+					const $li = $('<li>', { class: "nav-item dropdown" });
+					const $dropdown = $('<a>', {
+						class: "nav-link dropdown-toggle",
+						href: "#" + mainKey,
+						id: "navbarDropdown_" + mainKey,
+						role: "button",
+						"data-bs-toggle": "dropdown",
+						"aria-expanded": "false",
+						text: mainVal.name
+					});
+					const $menu = $('<div>', {
+						class: "dropdown-menu",
+						"aria-labelledby": "navbarDropdown_" + mainKey
+					});
+					Object.entries(mainVal.locations).forEach(([subKey, subVal]) => {
+						$menu.append($('<a>', {
+							class: "dropdown-item",
+							href: "#" + mainKey + "_" + subKey,
+							text: subVal.name,
+							"data-main": mainKey,
+							"data-sub": subKey
+						}));
+					});
+					$li.append($dropdown, $menu);
+					$navbarList.append($li);
+				});
+				$("#navbar-list .dropdown-menu:first .dropdown-item:first").addClass("active");
 			}
 			
+			//Entry point
 			$(document).ready(function() {
 				startTime();
-
-				createElements();
+				createMenuElements();
 				
-				var location = $(".nav-item a.active").attr("href");
-				createContainerElements(location.substring(1));
+				 // Show first location by default
+				const $firstActive = $(".nav-item a.active");
+				if ($firstActive.length) {
+					createContainerElements($firstActive.attr("href").substring(1));
+				}
 
-				$('.nav-item a').click(function(){
-					$(".nav-item a").removeClass("active");
+				// Handle menu clicks
+				$('#navbar-list').on('click', '.dropdown-menu a', function(e) {
+					e.preventDefault();
+					$(".dropdown-menu a").removeClass("active");
 					$(this).addClass("active");
-					
-					var location = $(this).attr("href");
-					createContainerElements(location.substring(1));
-				});	
-				
+					createContainerElements($(this).attr("href").substring(1));
+				});
+
+				// Handle window resize
 				$(window).on("resize", function() {
-					var location = $(".nav-item a.active").attr("href");
-					createContainerElements(location.substring(1));
-					
+					const $active = $(".nav-item a.active");
+					if ($active.length) {
+						createContainerElements($active.attr("href").substring(1));
+					}
 					showClock($(window).width());
 				});
 			});		
-		</script>
+	  </script>
 	
 	  <!-- Styles -->
 	  <style>
@@ -316,6 +395,10 @@
 			color: white;
 			margin-left: auto;
 			margin-right: 5px;
+		}
+
+		.dropdown-item.active, .dropdown-item:active {
+			background-color: black !important; /* Bootstrap primary, change as needed */
 		}
 	  </style>
 	</head>
