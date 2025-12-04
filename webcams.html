@@ -9,6 +9,7 @@
 	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	  <script type="text/javascript" src="https://static.panomax.com/front/thumbnail/js/pmaxthumbnail.js"></script>
+	  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 	  <script type="text/javascript">
 			let timeText;
 			
@@ -17,30 +18,34 @@
 					name: "Valle d'Aosta", locations: {
 						"cervinia" : { 
 							name: "Cervinia", webcams: [ 
-								{ name: "Plan Maison", type: "image", src: "https://cervinia-api.therocks.it/api/webcam/CEWC_AREA_PLANMAISON.jpg"},
+								{ name: "Plan Maison", type: "image", src: "https://cervinia-api.devtherocks.it/api/webcam/CEWC_AREA_PLANMAISON.jpg"},
 								{ name: "Plan Maison", type: "iframe", iframeType: "panoramax", iframeId: 1203},
 								{ name: "Plateau Rosa", type: "iframe", iframeType: "panoramax", iframeId: 1289},
 								{ name: "Zermatt", type: "iframe", src:"https://zbag.roundshot.com/matterhornglacierparadise/#/video"},
-								{ name: "Cretaz", type: "image", src: "https://cervinia-api.therocks.it/api/webcam/CEWC_AREA_CRETAZ.jpg"}, 
-								{ name: "Du Col Monte", type: "image", src: "https://cervinia-api.therocks.it/api/webcam/CBWC_AREA_DUCOL_M.jpg"},
+								{ name: "Cretaz", type: "image", src: "https://cervinia-api.devtherocks.it/api/webcam/CEWC_AREA_CRETAZ.jpg"}, 
+								{ name: "Du Col Monte", type: "image", src: "https://cervinia-api.devtherocks.it/api/webcam/CBWC_AREA_DUCOL_M.jpg"},
 								{ name: "Goillet", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6350&design=v5&lg=it"},
-								{ name: "Valtournanche Motta", type: "image", src: "https://cervinia-api.therocks.it/api/webcam/CBWC_AREA_MOTTA_M.jpg"},
+								{ name: "Valtournanche Motta", type: "image", src: "https://cervinia-api.devtherocks.it/api/webcam/CBWC_AREA_MOTTA_M.jpg"},
 								{ name: "Chamois", type: "iframe", iframeType: "panoramax", iframeId: 1774},
 							]},
 						"pila" : {
 							name: "Pila", webcams: [ 
-								{ name: "Pila", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6316&design=v5&lg=it"},
+								{ name: "Gorraz", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6315&design=v5&lg=it"},
+								{ name: "Gressan", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6313&design=v5&lg=it"},
+								{ name: "Grimod", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6311&design=v5&lg=it"}
 							]},
 						"monterosa" : {
 							name: "Monterosa", webcams: [ 
 								{ name: "Crest", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6284&design=v5&lg=it"},
 								{ name: "Colle Betta", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6283&design=v5&lg=it"},
 								{ name: "Gabiet", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6285&design=v5&lg=it"},
+								{ name: "Sitten", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6282&design=v5&lg=it"},
 								{ name: "Salati", type: "image", src: "https://webcam.visitmonterosa.com/webcam.php?wid=4&ext=.jpg&timestamp=1704787583"}					
 							]},
 						"lathuile" : {
 							name: "La Thuile", webcams: [ 
 								{ name: "Paese", type: "iframe", src:"https://ac123mp-cdn.streamcloud.it/embed/live/8c52090f-320d-4ab9-9bcf-3e2fc5472d06"},
+								{ name: "Chaz Dura", type: "iframe", src:"https://ac123mp-cdn.streamcloud.it/embed/live/f0675f54-ba1a-4745-9d5c-bf355b576d1a"},
 								{ name: "Chaz Dura", type: "iframe", iframeType: "panoramax", iframeId: 1270},
 								{ name: "Rosiere", type: "iframe", src:"https://m.webcam-hd.com/rosiere-planica/rosiere-planica_hotel"}
 							]},
@@ -68,8 +73,7 @@
 								{ name: "Artesina", type: "image", src: "https://cdn.skylinewebcams.com/88.jpg"},
 								{ name: "Turra", type: "image", src: "https://cdn.skylinewebcams.com/153.jpg"},
 								{ name: "Mirafiori", type: "image", src: "https://www.simolimo.com/webcam/artesina/mirafiori/image.jpg"},
-								{ name: "Frabosa", type: "image", src: "https://www.frabosaski.it/webcam/Malanotte.jpg"},
-								{ name: "Burrino", type: "image", src: "https://www.frabosaski.it/webcam/burrino.jpg"}
+								{ name: "Frabosa", type: "image", src: "https://www.frabosaski.it/webcam/Malanotte.jpg"}
 							]},
 						"sanGiacomo" : {
 							name: "San Giacomo", webcams: [ 
@@ -112,7 +116,8 @@
 						]},
 						"bormio" : {
 							name: "Bormio", webcams: [ 
-								{ name: "Bormio", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6220&design=v5&lg=it"}				
+								{ name: "Bormio 2000", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6220&design=v5&lg=it"},
+								{ name: "Bormio 3000", type: "iframe", src: "https://webtv.feratel.com/webtv/?cam=6221&design=v5&lg=it"}									
 						]},
 				}},				
 				"trentino" : {
@@ -133,7 +138,8 @@
 						"santoStefano" : {
 							name: "Santo Stefano D'Aveto", webcams: [ 
 								{ name: "Prato Cipolla", type: "image", src: "https://retelimet.centrometeoligure.it/stazioni/meteo-cipolla/webcam/current.jpg"},
-								{ name: "Monte Bue", type: "image", src: "http://www.webcam.pc.it/webcam/montebue.jpg"}
+								{ name: "Monte Bue", type: "image", src: "http://www.webcam.pc.it/webcam/montebue.jpg"},
+								{ name: "Rocca D'Aveto", type: "image", src: "https://retelimet.centrometeoligure.it/stazioni/meteo-rocca/rocca.jpg"}								
 							]},
 						"genova" : {
 							name: "Genova", webcams: [ 
@@ -146,9 +152,9 @@
 								{ name: "Terrazza Colombo - Centro", type: "iframe", src: "https://g0.ipcamlive.com/player/player.php?alias=6166ebad0c2a0&skin=white&autoplay=1"},
 								{ name: "Terrazza Colombo - Ponente", type: "iframe", src: "https://g0.ipcamlive.com/player/player.php?alias=6166eb417160c&skin=white&autoplay=1"},
 								{ name: "Terrazza Colombo - Mare", type: "iframe", src: "https://g0.ipcamlive.com/player/player.php?alias=616694726ad6a&skin=white&autoplay=1"},
+								{ name: "Monte Caucaso", type: "image", src: "https://www.tripwebcam.com/webcam-live/rifugiocaucaso/cam.jpg"},
 								{ name: "Faiallo", type: "image", src: "https://retelimet.centrometeoligure.it/stazioni/meteo-faiallo/data/wds5/cartella_dati_meteo/webcam/cam.jpg"},
-								{ name: "Rifugio Antola", type: "image", src: "https://retelimet.centrometeoligure.it/stazioni/meteo-rifugio-parco-antola/data/webcam/antolacam.jpg"},
-								{ name: "Rifugio Argentea", type: "image", src: "https://vecchiosito.comune.arenzano.ge.it/uploads/images/webcam/rifugio/image.jpg"}
+								{ name: "Rifugio Antola", type: "image", src: "https://retelimet.centrometeoligure.it/stazioni/meteo-rifugio-parco-antola/data/webcam/antolacam.jpg"}
 							]}
 					}
 				}
@@ -239,6 +245,24 @@
 					if(entry.type == "image") {
 						//Add Image
 						$el.append($('<img>', { class: "NO-CACHE carouselImg", src: entry.src + "?a=" + Math.random(), alt: entry.name }));
+					}
+					else if(entry.type == "hls") {
+						const $video = $('<video>', { class : "carouselImg" })
+						if (Hls.isSupported()) {
+							const hls = new Hls();
+							hls.loadSource(entry.src);
+							hls.attachMedia($video[0]);
+							hls.on(Hls.Events.MANIFEST_PARSED, () => {
+							  $video[0].play();
+							});
+						} else if ($video.canPlayType('application/vnd.apple.mpegurl')) {
+							// For Safari
+							$video.src = entry.src;
+							$video.addEventListener('loadedmetadata', () => {
+							  $video.play();
+							});
+						}
+						$el.append($video);
 					}
 					else if(entry.type == "iframe") {
 						//Add Iframe
